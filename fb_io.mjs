@@ -3,14 +3,13 @@
 // Generalised firebase routines
 // Written by <Madhulika>, Term 2 2025
 /**************************************************************/
-fb_initialise()
 /**************************************************************/
 // Import all external constants & functions required
 /**************************************************************/
 // Import all the methods you want to call from the firebase modules
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
 import { getDatabase,} from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
-/*import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut} from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";*/
+import { getAuth, GoogleAuthProvider, signInWithPopup, /*onAuthStateChanged, signOut*/} from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
 /**************************************************************/
 //Firevase Configuration
 /**************************************************************/
@@ -25,29 +24,25 @@ const FB_GAMECONFIG = {
     measurementId: "G-RNYJ2GKKLL"
   };
 
+const FB_GAMEAPP = initializeApp(FB_GAMECONFIG);    
+const FB_GAMEDB = getDatabase(FB_GAMEAPP);           
+console.info(FB_GAMEDB);                          
+
+const statusEl = document.getElementById("p_fbInitialise");
+if (statusEl) {
+    statusEl.innerHTML = "Initialised";
+}
+
 /**************************************************************/
 // EXPORT FUNCTIONS
 /**************************************************************/
-export { 
-    fb_initialise };
-export { 
-    fb_authenticate };
+export { fb_initialise, fb_authenticate };
 /**************************************************************/
 // EXPORT FUNCTIONS
 // List all the functions called by code or html outside of this module
 /**************************************************************/
 function fb_initialise() {
-    console.log('%c fb_initialise(): ', 
-                'color: ' + COL_C + '; background-color: ' + COL_B + ';');
-    
-                const FB_GAMEAPP = initializeApp(FB_GAMECONFIG);    
-                const FB_GAMEDB = getDatabase(FB_GAMEAPP);           
-                console.info(FB_GAMEDB);                          
-            
-                const statusEl = document.getElementById("p_fbInitialise");
-                if (statusEl) {
-                    statusEl.innerHTML = "Initialised";
-                }
+
 }
 
 function fb_authenticate(){
@@ -57,10 +52,10 @@ function fb_authenticate(){
         prompt: 'select_account'
     });
     signInWithPopup(AUTH, PROVIDER).then(() => {
-        console.log("working")
+        console.log("Authentication done")
     })
     .catch(() => {
-        console.log("not working")
+        console.log("Authentication not working")
     });
 }
 /**************************************************************/
