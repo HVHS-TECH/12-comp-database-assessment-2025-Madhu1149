@@ -37,6 +37,8 @@ if (statusEl) {
 // EXPORT FUNCTIONS
 /**************************************************************/
 export { fb_initialise, fb_authenticate };
+
+export { fb_detectAuthState };
 /**************************************************************/
 // EXPORT FUNCTIONS
 // List all the functions called by code or html outside of this module
@@ -56,6 +58,19 @@ function fb_authenticate(){
     })
     .catch(() => {
         console.log("Authentication not working")
+    });
+}
+
+function fb_detectAuthState(){
+    const AUTH = getAuth();
+    onAuthStateChanged(AUTH, (user) => {
+        if (user) {
+            console.log("working")
+        } else {
+            console.log("working")
+        }
+    }, () => {
+        console.log("not working")
     });
 }
 /**************************************************************/

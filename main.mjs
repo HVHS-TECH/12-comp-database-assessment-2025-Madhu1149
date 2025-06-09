@@ -14,6 +14,10 @@ import { fb_initialise }
 import { fb_authenticate }
     from './fb_io.mjs';
     window.fb_authenticate   = fb_authenticate;
+
+import { fb_detectAuthState }
+    from './fb_io.mjs';
+    window.fb_detectAuthState   = fb_detectAuthState;
 /**************************************************************/
 //   END OF CODE
 /**************************************************************/
