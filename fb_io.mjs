@@ -8,8 +8,8 @@
 /**************************************************************/
 // Import all the methods you want to call from the firebase modules
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
-import { getDatabase,} from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
-import { getAuth, GoogleAuthProvider, signInWithPopup, /*onAuthStateChanged, signOut*/} from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+import { getDatabase, ref, set, get, update} from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup} from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
 /**************************************************************/
 //Firevase Configuration
 /**************************************************************/
@@ -37,8 +37,9 @@ if (statusEl) {
 // EXPORT FUNCTIONS
 /**************************************************************/
 export { fb_initialise, fb_authenticate };
+export { fb_UpdateFbRec }
+export { fb_ReadSpecificFirebase };
 
-export { fb_detectAuthState };
 /**************************************************************/
 // EXPORT FUNCTIONS
 // List all the functions called by code or html outside of this module
@@ -61,16 +62,30 @@ function fb_authenticate(){
     });
 }
 
-function fb_detectAuthState(){
-    const AUTH = getAuth();
-    onAuthStateChanged(AUTH, (user) => {
-        if (user) {
-            console.log("working")
+function fb_UpdateFbRec(){
+    const FB_GAMEAPP = initializeApp(FB_GAMECONFIG);    
+    const FB_GAMEDB = getDatabase(FB_GAMEAPP);
+    const dbReference= ref(FB_GAMEDB,"fiction/Author");
+    update(dbReference,{Book number:3455} ).then(() => {
+        console.log("working")
+    }).catch((error) => {
+        console.log("Not working")
+    });
+}
+
+function fb_ReadSpecificFirebase(){
+    const FB_GAMEAPP = initializeApp(FB_GAMECONFIG);    
+    const FB_GAMEDB = getDatabase(FB_GAMEAPP); 
+    const dbReference= ref(FB_GAMEDB,"fiction/Author" );
+    get(dbReference).then((snapshot) => {
+        var fb_data = snapshot.val();
+        if (fb_data != null) {
+            console.log(fb_data)
         } else {
-            console.log("working")
+            console.log("No rec found")
         }
-    }, () => {
-        console.log("not working")
+    }).catch(() => {
+        console.log("Not working")
     });
 }
 /**************************************************************/

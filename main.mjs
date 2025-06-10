@@ -15,9 +15,13 @@ import { fb_authenticate }
     from './fb_io.mjs';
     window.fb_authenticate   = fb_authenticate;
 
-import { fb_detectAuthState }
+import { fb_UpdateFbRec }
     from './fb_io.mjs';
-    window.fb_detectAuthState   = fb_detectAuthState;
+    window.fb_UpdateFbRec   = fb_UpdateFbRec;
+
+import { fb_ReadSpecificFirebase }
+    from './fb_io.mjs';
+    window.fb_ReadSpecificFirebase   = fb_ReadSpecificFirebase;
 /**************************************************************/
 //   END OF CODE
 /**************************************************************/
