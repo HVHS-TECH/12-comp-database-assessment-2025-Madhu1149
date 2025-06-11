@@ -11,22 +11,20 @@
 <h1> Year 12 Comp Project</h1>
 </header>
   <script type="module" src="./main.mjs"></script>
-      <form id="fruitForm">
-      <label for="name">User Name:</label>
-      <input type="text" id="name" name="name" required />
-      <label for="favoriteFruit">Display Name:</label>
-      <input type="text" id="favoriteFruit" name="favoriteFruit" required />
-      <label for="favoriteFruit">Age:</label>
-      <input type="text" id="favoriteFruit" name="favoriteFruit" required />
-      <label for="favoriteFruit">Email:</label>
-      <input type="text" id="favoriteFruit" name="favoriteFruit" required />
-      <label for="favoriteFruit">:</label>
-      <input type="text" id="favoriteFruit" name="favoriteFruit" required />
-    </form>
   <button onclick="fb_authenticate()">Authenticate</button>
-  <button onclick="fb_UpdateFbRec()">write a record</button>
-  <button onclick="fb_ReadSpecificFirebase()">Read record</button>
-</body>
+    <form id="fruitForm">
+    <label for="name">User Name:</label>
+    <input type="text" id="name" name="name" required />
+    <label for="Display_Name">Display Name:</label>
+    <input type="text" id="Display_Name" name="Display_Name" required />
+    <label for="User_Age">Age:</label>
+    <input type="number" id="User_Age" name="User_Age" required />
+    <label for="User_Email">Email:</label>
+    <input type="text" id="User_Email" name="User_Email" required />
+    </form>
+  <button onclick="fb_write()">Write</button>
+  <button onclick="fb_Read()">Read</button>
+</body>page display
 </html>
 <!--*************************************************************
   END OF INDEX.HTML

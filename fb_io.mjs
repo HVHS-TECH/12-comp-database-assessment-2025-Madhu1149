@@ -37,15 +37,14 @@ if (statusEl) {
 // EXPORT FUNCTIONS
 /**************************************************************/
 export { fb_initialise, fb_authenticate };
-export { fb_UpdateFbRec }
-export { fb_ReadSpecificFirebase };
+export { fb_write }
+export { fb_Read };
 
 /**************************************************************/
 // EXPORT FUNCTIONS
 // List all the functions called by code or html outside of this module
 /**************************************************************/
 function fb_initialise() {
-
 }
 
 function fb_authenticate(){
@@ -62,30 +61,31 @@ function fb_authenticate(){
     });
 }
 
-function fb_UpdateFbRec(){
+function fb_write(){
     const FB_GAMEAPP = initializeApp(FB_GAMECONFIG);    
-    const FB_GAMEDB = getDatabase(FB_GAMEAPP);
-    const dbReference= ref(FB_GAMEDB,"fiction/Author");
-    update(dbReference,{Book number:3455} ).then(() => {
+    const FB_GAMEDB = getDatabase(FB_GAMEAPP);      
+    const dbReference= ref(FB_GAMEDB,"friction/Author");
+    set(dbReference, {         }).then(() => {
         console.log("working")
-    }).catch((error) => {
-        console.log("Not working")
+    }).catch(() => {
+        console.log("not working")
     });
 }
 
-function fb_ReadSpecificFirebase(){
-    const FB_GAMEAPP = initializeApp(FB_GAMECONFIG);    
-    const FB_GAMEDB = getDatabase(FB_GAMEAPP); 
-    const dbReference= ref(FB_GAMEDB,"fiction/Author" );
+function fb_Read(){
+    const FB_GAMEAPP = initializeApp(FB_GAMECONFIG);  
+    const FB_GAMEDB = getDatabase(FB_GAMEAPP);   
+    const dbReference= ref(FB_GAMEDB,"friction");
     get(dbReference).then((snapshot) => {
         var fb_data = snapshot.val();
         if (fb_data != null) {
-            console.log(fb_data)
+             console.log(fb_data)
         } else {
-            console.log("No rec found")
+            console.log("no rec found")
         }
     }).catch(() => {
         console.log("Not working")
+
     });
 }
 /**************************************************************/

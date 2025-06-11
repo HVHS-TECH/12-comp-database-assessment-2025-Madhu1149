@@ -15,13 +15,13 @@ import { fb_authenticate }
     from './fb_io.mjs';
     window.fb_authenticate   = fb_authenticate;
 
-import { fb_UpdateFbRec }
+import { fb_write }
     from './fb_io.mjs';
-    window.fb_UpdateFbRec   = fb_UpdateFbRec;
+    window.fb_write   = fb_write;
 
-import { fb_ReadSpecificFirebase }
+import { fb_Read }
     from './fb_io.mjs';
-    window.fb_ReadSpecificFirebase   = fb_ReadSpecificFirebase;
+    window.fb_Read   = fb_Read;
 /**************************************************************/
 //   END OF CODE
 /**************************************************************/
