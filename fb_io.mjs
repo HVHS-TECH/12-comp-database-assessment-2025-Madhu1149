@@ -64,8 +64,8 @@ function fb_authenticate(){
 function fb_write(){
     const FB_GAMEAPP = initializeApp(FB_GAMECONFIG);    
     const FB_GAMEDB = getDatabase(FB_GAMEAPP);      
-    const dbReference= ref(FB_GAMEDB,"friction/Author");
-    set(dbReference, {         }).then(() => {
+    const dbReference= ref(FB_GAMEDB,"User_Age/Age");
+    set(dbReference, {Userage:12 }).then(() => {
         console.log("working")
     }).catch(() => {
         console.log("not working")
