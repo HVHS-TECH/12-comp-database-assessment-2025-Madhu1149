@@ -75,7 +75,7 @@ function fb_write(){
 function fb_Read(){
     const FB_GAMEAPP = initializeApp(FB_GAMECONFIG);  
     const FB_GAMEDB = getDatabase(FB_GAMEAPP);   
-    const dbReference= ref(FB_GAMEDB,"friction");
+    const dbReference= ref(FB_GAMEDB,"User_Age");
     get(dbReference).then((snapshot) => {
         var fb_data = snapshot.val();
         if (fb_data != null) {
