@@ -44,9 +44,14 @@ export { fb_Read };
 // EXPORT FUNCTIONS
 // List all the functions called by code or html outside of this module
 /**************************************************************/
+/**************************************************************
+//Function to initialise
+**************************************************************/
 function fb_initialise() {
 }
-
+/**************************************************************
+//Function to Authenticate / Log in
+***************************************************************/
 function fb_authenticate(){
     const AUTH = getAuth();
     const PROVIDER = new GoogleAuthProvider();
@@ -60,6 +65,9 @@ function fb_authenticate(){
         console.log("Authentication not working")
     });
 }
+/***************************************************
+//Function to write the data in FireBase
+***************************************************/
 
 function fb_write(){
 
@@ -80,7 +88,9 @@ function fb_write(){
         console.log("Error writing data",error)
     });
 }
-
+/**********************************************
+//Function to read data
+**********************************************/
 function fb_Read(){
     const FB_GAMEAPP = initializeApp(FB_GAMECONFIG);  
     const FB_GAMEDB = getDatabase(FB_GAMEAPP);   
