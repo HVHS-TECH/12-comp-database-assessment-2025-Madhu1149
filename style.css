@@ -1,6 +1,7 @@
-/* ============================================================
-   Reset and base styles
-============================================================ */
+/****************************************************************************
+//Style sheet
+****************************************************************************/
+/* Reset and base styles */
 * {
   box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -23,20 +24,24 @@ h1 {
   color: #0C4A6E;
 }
 
-/* ============================================================
-   Main content aligned vertically on the left
-============================================================ */
-main {
+/* Flex container for form and games */
+.main-layout {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Left form section */
+.form-section {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 1rem;
   max-width: 400px;
 }
 
-/* ============================================================
-   Form styling
-============================================================ */
+/* Form styling */
 form {
   display: flex;
   flex-direction: column;
@@ -57,9 +62,7 @@ input {
   color: #1F2937;
 }
 
-/* ============================================================
-   Button styling
-============================================================ */
+/* Button styling */
 button {
   background-color: #38BDF8;
   color: #ffffff;
@@ -75,11 +78,10 @@ button:hover {
   background-color: #0EA5E9;
 }
 
-/* ============================================================
-   Game Section Styling (with Images & Side-by-Side Links)
-============================================================ */
+/* Game section styling */
 #games {
-  margin-top: 2rem;
+  flex: 1;
+  max-width: 500px;
   padding: 1rem;
 }
 
@@ -87,13 +89,12 @@ button:hover {
   font-size: 1.5rem;
   color: #0C4A6E;
   margin-bottom: 1rem;
-  text-align: center;
+  text-align: left;
 }
 
 .game-container {
   display: flex;
-  justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
 }
 
@@ -101,7 +102,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 180px;
+  width: 200px;
   background-color: #F0F9FF;
   padding: 1rem;
   border-radius: 12px;
@@ -126,3 +127,6 @@ button:hover {
   text-decoration: underline;
   color: #2563EB;
 }
+/****************************************
+//End of code
+****************************************/
