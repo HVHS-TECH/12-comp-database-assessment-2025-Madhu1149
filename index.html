@@ -1,31 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>year 12 assisment</title>
-    <link rel="stylesheet" href="/style.css/">
+  <meta charset="UTF-8" />
+  <title>Year 12 Assignment</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <!--*************************************************************
   BODY
 **************************************************************-->
 <body>
   <header>
-<h1> Year 12 Comp Project</h1>
-</header>
-  <script type="module" src="./main.mjs"></script>
-  <button onclick="fb_authenticate()">Authenticate</button>
+    <h1>Year 12 Comp Project</h1>
+  </header>
+
+  <main>
+    <button onclick="fb_authenticate()">Authenticate</button>
+
     <form id="fruitForm">
-    <label for="name">User Name:</label>
-    <input type="text" id="name" name="name" required />
-    <label for="Display_Name">Display Name:</label>
-    <input type="text" id="Display_Name" name="Display_Name" required />
-    <label for="User_Age">Age:</label>
-    <input type="number" id="User_Age" name="User_Age" required />
-    <label for="User_Email">Email:</label>
-    <input type="text" id="User_Email" name="User_Email" required />
+      <label for="name">User Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="Display_Name">Display Name:</label>
+      <input type="text" id="Display_Name" name="Display_Name" required />
+
+      <label for="User_Age">Age:</label>
+      <input type="number" id="User_Age" name="User_Age" required />
+
+      <label for="User_Email">Email:</label>
+      <input type="text" id="User_Email" name="User_Email" required />
     </form>
-  <button onclick="fb_write()">Write</button>
-  <button onclick="fb_Read()">Read</button>
-</body>page display
+
+    <button onclick="fb_write()">Write</button>
+    <button onclick="fb_Read()">Read</button>
+     <section id="games">
+      <h2>My games</h2>
+      <div class="game-container">
+        <div class="game-card">
+          <img src="https://via.placeholder.com/150" alt="Game 1 Image" />
+          <a href=" https://hvhs-tech.github.io/12comp-javascript-project-2025-Madhu1149/" target="_blank">🎮 Game 1: The assisment game</a>
+        </div>
+        <div class="game-card">
+          <img src="https://via.placeholder.com/150" alt="Game 2 Image" />
+          <a href=" https://hvhs-tech.github.io/demo-game-game-that-works-Madhu1149/" target="_blank">🧩 Game 2: Game that works</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./main.mjs"></script>
+</body>
 </html>
 <!--*************************************************************
   END OF INDEX.HTML

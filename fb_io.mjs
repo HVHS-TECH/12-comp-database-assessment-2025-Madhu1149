@@ -62,13 +62,22 @@ function fb_authenticate(){
 }
 
 function fb_write(){
+
+    const name = document.getElementById("name").value;
+    const displayName = document.getElementById("Display_Name").value;
+    const age = document.getElementById("User_Age").value;
+    const email = document.getElementById("User_Email").value;
     const FB_GAMEAPP = initializeApp(FB_GAMECONFIG);    
     const FB_GAMEDB = getDatabase(FB_GAMEAPP);      
-    const dbReference= ref(FB_GAMEDB,"User_Age/Age");
-    set(dbReference, {Userage:12 }).then(() => {
-        console.log("working")
+    const dbReference= ref(FB_GAMEDB,"users/" + name);
+    set(dbReference, {
+        DisplayName:displayName,
+        UserAge:age,
+        UserEmail:email
+     }).then(() => {
+        console.log("Data written successfully")
     }).catch(() => {
-        console.log("not working")
+        console.log("Error writing data",error)
     });
 }
 
