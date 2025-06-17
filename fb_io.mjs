@@ -70,7 +70,6 @@ function fb_authenticate(){
 ***************************************************/
 
 function fb_write(){
-
     const name = document.getElementById("name").value;
     const displayName = document.getElementById("Display_Name").value;
     const age = document.getElementById("User_Age").value;
